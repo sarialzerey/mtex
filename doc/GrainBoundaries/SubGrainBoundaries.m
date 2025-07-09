@@ -24,13 +24,14 @@ mtexdata ferrite silent
 % boundaries.
 
 [grains,ebsd.grainId] = calcGrains(ebsd('indexed'),...
-  'threshold',[1*degree, 10*degree],'minPixel',5);
+  'threshold',[1*degree, 10*degree],'minPixel',5); %use 1*degree,15*degree to be consistent with what you mentioned in the introduction (% Low-angle grain boundaries (LAGB) or subgrain boundaries are those with a
+% misorientation less than about 15 degrees.)
 
 % lets smooth the grain boundaries a bit
 grains = smooth(grains,5)
 
 %%
-% We observe that we have 12314 high-angle boundary segments and 28501
+% We observe that we have 12865 high-angle boundary segments and 28540 
 % low-angle boundary segments. In order to visualize the the subgrain
 % boundaries we first plot the ebsd data colorized by orientation. On top
 % we plot with solid lines the grain boundaries and with thinner lines the
